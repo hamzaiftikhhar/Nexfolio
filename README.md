@@ -107,9 +107,9 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📞 Contact
 
-Your Name - [@yourusername](https://twitter.com/yourusername)
+Your Name - [hamzaiftikhhar@gmail.com]
 
-Project Link: [https://github.com/yourusername/devsphere-portfolio](https://github.com/yourusername/devsphere-portfolio)
+Project Link: [https://github.com/hamzaiftikhhar/Nexfolio](https://github.com/hamzaiftikhhar/Nexfolio)
 
 ---
 
