@@ -107,7 +107,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📞 Contact
 
-Your Name - [hamzaiftikhhar@gmail.com]
+Your Name - [hamzaiftikhhar@gmail.com](hamzaiftikhhar@gmail.com)
 
 Project Link: [https://github.com/hamzaiftikhhar/Nexfolio](https://github.com/hamzaiftikhhar/Nexfolio)
 

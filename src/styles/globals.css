@@ -3,26 +3,19 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 26, 11, 46;
-  --background-end-rgb: 26, 11, 46;
+  --primary-purple: #1A0B2E;
+  --accent-purple: #9857D3;
+  --text-gradient: linear-gradient(90deg, #4CA5FF 0%, #B673F8 100%);
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: var(--primary-purple);
+  color: white;
 }
 
 .gradient-text {
-  background: linear-gradient(90deg, #4CA5FF 0%, #B673F8 100%);
+  background: var(--text-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-
-

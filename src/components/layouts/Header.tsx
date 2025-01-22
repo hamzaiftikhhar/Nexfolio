@@ -1,66 +1,60 @@
 import Link from 'next/link';
 import { useState } from 'react';
-import { Menu } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const navigationItems = [
+    { name: 'Home', path: '/' },
+    { name: 'About', path: '/about' },
+    { name: 'Lab', path: '/lab' },
+  ];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#1A0B2E]/80 backdrop-blur-sm">
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <Link href="/" className="text-white text-2xl font-bold">
-            {/* You can replace this with your logo */}
+          <Link href="/" className="text-2xl font-bold">
             ℥
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="text-white hover:text-purple-400 transition-colors">
-              Home
-            </Link>
-            <Link href="/about" className="text-white hover:text-purple-400 transition-colors">
-              About
-            </Link>
-            <Link href="/lab" className="text-white hover:text-purple-400 transition-colors">
-              Lab
-            </Link>
+            {navigationItems.map((item) => (
+              <Link
+                key={item.name}
+                href={item.path}
+                className="text-white hover:text-purple-400 transition-colors"
+              >
+                {item.name}
+              </Link>
+            ))}
           </div>
 
-          {/* Mobile Navigation Button */}
+          {/* Mobile Menu Button */}
           <button
             className="md:hidden text-white"
             onClick={() => setIsOpen(!isOpen)}
           >
-            <Menu size={24} />
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
-        {/* Mobile Navigation Menu */}
+        {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              <Link
-                href="/"
-                className="block px-3 py-2 text-white hover:text-purple-400 transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Home
-              </Link>
-              <Link
-                href="/about"
-                className="block px-3 py-2 text-white hover:text-purple-400 transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                About
-              </Link>
-              <Link
-                href="/lab"
-                className="block px-3 py-2 text-white hover:text-purple-400 transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Lab
-              </Link>
+          <div className="md:hidden absolute top-full left-0 right-0 bg-[#1A0B2E]/95 backdrop-blur-sm">
+            <div className="px-6 py-4 space-y-3">
+              {navigationItems.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.path}
+                  className="block text-white hover:text-purple-400 transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              ))}
             </div>
           </div>
         )}
