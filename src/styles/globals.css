@@ -1,21 +1,46 @@
+/* app/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --primary-purple: #1A0B2E;
-  --accent-purple: #9857D3;
-  --text-gradient: linear-gradient(90deg, #4CA5FF 0%, #B673F8 100%);
+  --background: #0a041a;
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --purple-accent: #9F7AEA;
 }
 
 body {
-  background-color: var(--primary-purple);
-  color: white;
+  background-color: var(--background);
+  color: var(--text-primary);
+  font-family: system-ui, -apple-system, sans-serif;
 }
 
-.gradient-text {
-  background: var(--text-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.hero-glow {
+  background: radial-gradient(circle at center, rgba(159, 122, 234, 0.15) 0%, transparent 70%);
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  filter: blur(40px);
+}
+
+.work-card {
+  background: rgba(159, 122, 234, 0.05);
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+
+.section {
+  padding: 80px 0;
 }

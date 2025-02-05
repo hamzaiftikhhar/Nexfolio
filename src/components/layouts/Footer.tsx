@@ -1,45 +1,44 @@
-import Link from 'next/link';
-import { Instagram, Github, Linkedin } from 'lucide-react';
 
-const Footer = () => {
+// components/layouts/Footer.tsx
+import Link from 'next/link'
+
+export default function Footer() {
   const socialLinks = [
-    { name: 'GitHub', icon: <Github size={20} />, url: 'https://github.com/yourusername' },
-    { name: 'LinkedIn', icon: <Linkedin size={20} />, url: 'https://linkedin.com/in/yourusername' },
-    { name: 'Instagram', icon: <Instagram size={20} />, url: 'https://instagram.com/yourusername' },
-  ];
+    { name: 'GitHub', href: '#', icon: 'github' },
+    { name: 'Twitter', href: '#', icon: 'twitter' },
+    { name: 'LinkedIn', href: '#', icon: 'linkedin' },
+  ]
 
   return (
-    <footer className="bg-[#1A0B2E]/50 mt-20">
-      <div className="container mx-auto px-6 py-12">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-6 md:mb-0">
-            <Link href="/" className="text-2xl font-bold">
-              ℥
-            </Link>
-          </div>
-
-          <div className="flex space-x-6">
-            {socialLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/70 hover:text-white transition-colors"
-                aria-label={link.name}
-              >
-                {link.icon}
-              </a>
-            ))}
-          </div>
-        </div>
-
-        <div className="mt-8 text-center text-white/50 text-sm">
-          <p>© {new Date().getFullYear()} Your Name. All rights reserved.</p>
-        </div>
+    <footer className="max-w-4xl mx-auto py-20 px-6 text-center">
+      <h2 className="text-3xl font-bold mb-6">Contact</h2>
+      <p className="mb-6">
+        I'm currently looking to join a cross-functional team that values improving people's lives
+        through accessible design, or have a project in mind? Let's connect!
+      </p>
+      <a 
+        href="mailto:Stefanospelgroms32@gmail.com" 
+        className="text-purple-400 hover:text-purple-300 transition-colors"
+      >
+        Stefanospelgroms32@gmail.com
+      </a>
+      
+      <div className="flex justify-center space-x-6 mt-8">
+        {socialLinks.map((link) => (
+          <Link
+            key={link.name}
+            href={link.href}
+            className="text-gray-400 hover:text-purple-400 transition-colors"
+          >
+            <span className="sr-only">{link.name}</span>
+            {/* Add your social icons here */}
+          </Link>
+        ))}
+      </div>
+      
+      <div className="mt-8 text-gray-400 text-sm">
+        <p>© 2024. All rights reserved.</p>
       </div>
     </footer>
-  );
-};
-
-export default Footer;
+  )
+}
