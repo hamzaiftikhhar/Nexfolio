@@ -1,17 +1,17 @@
-
-// components/layouts/Header.tsx
+// components/Header.tsx
 export default function Header() {
   return (
-    <header className="flex justify-between items-center p-6">
+    <header className="max-w-7xl mx-auto px-6 py-8 flex justify-between items-center">
       <div className="text-2xl font-bold">τ</div>
-      <nav className="space-x-6">
-        <a href="/" className="text-gray-200 hover:text-purple-400">Home</a>
-        <a href="/about" className="text-gray-200 hover:text-purple-400">About</a>
-        <a href="/lab" className="text-gray-200 hover:text-purple-400">Lab</a>
+      <nav className="space-x-12">
+        <a href="#" className="text-white hover:text-purple-400 transition-colors">Home</a>
+        <a href="#" className="text-white hover:text-purple-400 transition-colors">About</a>
+        <a href="#" className="text-white hover:text-purple-400 transition-colors">Lab</a>
       </nav>
     </header>
   )
 }
+
 // import Link from 'next/link';
 // import { useState } from 'react';
 // import { Menu, X } from 'lucide-react';

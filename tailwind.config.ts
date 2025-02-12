@@ -11,8 +11,11 @@ const config: Config = {
       colors: {
         purple: {
           400: '#9F7AEA',
-          900: '#322659',
+          900: '#0a041a',
         },
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       },
     },
   },
